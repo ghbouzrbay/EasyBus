@@ -1,55 +1,92 @@
-import DBClient from './utils/db';
+import DBClient from './utils/databus';
 
-const Queue = require('bull');
-const imageThumbnail = require('image-thumbnail');
-const dbClient = require('./db'); // Assuming you have a file db.js defining DBClient
+const { Client } = require('pg');
+const { Queue } = require('bull');
+const { timeToSeconds } = require('./utils');
 
-// Create a Bull queue named fileQueue
-const fileQueue = new Queue('fileQueue');
-
-// Process jobs in the fileQueue
-fileQueue.process(async (job) => {
-  const { fileId, userId } = job.data;
-
-  // Check if fileId and userId are present in the job
-  if (!fileId) {
-    throw new Error('Missing fileId');
-  }
-
-  if (!userId) {
-    throw new Error('Missing userId');
-  }
-
-  // Check if a document is found in the DB based on the fileId and userId
-  const user = await dbClient.getUser({ _id: userId });
-  if (!user) {
-    throw new Error('File not found');
-  }
-
-  // Generate thumbnails with different widths
-  const thumbnailSizes = [500, 250, 100];
-  const thumbnailResults = await Promise.all(thumbnailSizes.map(async (size) => {
-    try {
-      const thumbnail = await imageThumbnail(user.filePath, { width: size });
-      return { size, thumbnail };
-    } catch (error) {
-      console.error(`Error generating thumbnail with size ${size}:`, error);
-      return null;
-    }
-  }));
-
-  // Store each thumbnail result on the same location of the original file
-  const fileLocation = user.filePath.substring(0, user.filePath.lastIndexOf('.'));
-  const fileExtension = user.filePath.substring(user.filePath.lastIndexOf('.'));
-  await Promise.all(thumbnailResults.map(async (result) => {
-    if (result) {
-      const { size, thumbnail } = result;
-      const thumbnailFileName = `${fileLocation}_${size}${fileExtension}`;
-      // Save the thumbnail to disk or do whatever you want with it
-      // Example: fs.writeFileSync(thumbnailFileName, thumbnail);
-      console.log(`Thumbnail ${size} created:`, thumbnailFileName);
-    }
-  }));
+const client = new Client({
+  host: 'localhost',
+  port: 5432,
+  user: 'your_user',
+  password: 'your_password',
+  database: 'your_database'
 });
 
-module.exports = fileQueue;
+const queue = new Queue('processBuses');
+
+queue.process(async (job) => {
+  const { stationName } = job.data;
+
+  try {
+    await client.connect();
+
+    // Get the buses data from the database
+    const result = await client.query('SELECT * FROM buses');
+    const buses = result.rows;
+
+    // Find buses passing through the specified station
+    const busesPassing = findBusesByStation(stationName, buses);
+
+    // Find the closest bus to the station
+    const currentTime = '08:05'; // Current time for demonstration purposes
+    const closestBus = findClosestBus(busesPassing, currentTime);
+
+    // Display the buses passing through the station and the closest bus
+    displayBusesInfo(stationName, busesPassing, closestBus);
+
+  } catch (err) {
+    console.error('Error processing buses:', err);
+  } finally {
+    await client.end();
+  }
+});
+
+// Function to find buses passing through a specific station
+function findBusesByStation(stationName, buses) {
+  const busesPassing = [];
+  buses.forEach(bus => {
+    const busStation = bus.stations.find(station => station.name === stationName);
+    if (busStation) {
+      const timeRemaining = busStation.timeRemaining[0]; // Time remaining for the first station
+      busesPassing.push({ busId:bus.busId, timeRemaining: timeRemaining });
+    }
+  });
+  return busesPassing;
+}
+
+// Function to find the closest bus to the station
+function findClosestBus(buses, currentTime) {
+  let closestBus = null;
+  let minTimeRemaining = Infinity;
+  buses.forEach(bus => {
+    const timeRemainingInSeconds = timeToSeconds(bus.timeRemaining);
+    if (timeRemainingInSeconds < minTimeRemaining) {
+      closestBus = bus;
+      minTimeRemaining = timeRemainingInSeconds;
+    }
+  });
+  return closestBus;
+}
+
+// Function to convert time string to seconds
+function timeToSeconds(timeString) {
+  const [hours, minutes, seconds] = timeString.split(':').map(Number);
+  return hours * 3600 + minutes * 60 + seconds;
+}
+
+// Function to display buses passing through the station and the closest bus
+function displayBusesInfo(stationName, busesPassing, closestBus) {
+  console.log(`Buses passing through ${stationName}:`);
+  busesPassing.forEach(bus => {
+    console.log(`Bus ID: ${bus.busId} | Time Remaining: ${bus.timeRemaining}`);
+  });
+  console.log(`\nClosest bus to ${stationName}:`);
+  console.log(`Bus ID: ${closestBus.busId} | Time Remaining: ${closestBus.timeRemaining}`);
+}
+
+// Start processing the queue
+queue.process(10, async (job) => {
+  console.log(`Processing job ${job.id}...`);
+  await processBuses(job.data);
+  console.log(`Job ${job.id} processed.`);
+});
