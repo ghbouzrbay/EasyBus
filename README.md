@@ -30,10 +30,10 @@ EasyBus is a Web application designed to provide users with real-time informatio
 ## Schedule of Work:
 We will use Trello to organize our tasks and track our progress. Here's our tentative schedule:
 
-+ **2 days:** Project setup, database integration, and UI design.
-+ **2 days:** Implementing real-time updates for bus timings, fetching and displaying bus routes, and stops.
-+ **5 days:** Testing, bug fixes, and optimization.
-+ **4 days:** Final testing, polishing UI, and deployment.
++ Project setup, database integration, and UI design.
++ Implementing real-time updates for bus timings, fetching and displaying bus routes, and stops.
++ Testing, bug fixes, and optimization.
++ Final testing, polishing UI, and deployment.
 
 ## Note:
 ****This project pitch is a preliminary outline and subject to further refinement and adjustments during the development process. We aim to deliver a high-quality and user-friendly web application within the specified timeframe. Thank you for considering EasyBus!****
