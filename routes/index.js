@@ -1,6 +1,7 @@
 import AppController from '../controllers/AppController';
 import AuthController from '../controllers/AuthController';
 import UsersController from '../controllers/UsersController';
+import BusesController from '../controllers/BusesController';
 
 const express = require('express');
 
@@ -14,5 +15,8 @@ router.get('/disconnect', AuthController.getDisconnect);
 
 router.post('/users', UsersController.postNew);
 router.get('/users/me', UsersController.getMe);
+
+router.get('/buses', BusesController.getBuses);
+router.get('/buses/:id', BusesController.getBusId);
 
 module.exports = router;
