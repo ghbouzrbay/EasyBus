@@ -18,5 +18,7 @@ router.get('/users/me', UsersController.getMe);
 
 router.get('/buses', BusesController.getBuses);
 router.get('/buses/:id', BusesController.getBusId);
+router.get('/stations/:name', BusesController.getStation);
+router.get('/stations/:name/closest', BusesController.getStationClosest);
 
 module.exports = router;
