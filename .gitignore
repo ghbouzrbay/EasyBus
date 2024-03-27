@@ -1,2 +1,4 @@
 node_modules
 redis-6.0.10
+package-lock.json
+package.json
