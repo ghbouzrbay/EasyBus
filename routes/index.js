@@ -7,18 +7,18 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/status', AppController.getStatus);
-router.get('/stats', AppController.getStats);
+router.get('/api/status', AppController.getStatus);
+router.get('/api/stats', AppController.getStats);
 
-router.get('/connect', AuthController.getConnect);
-router.get('/disconnect', AuthController.getDisconnect);
+router.get('/api/connect', AuthController.getConnect);
+router.get('/api/disconnect', AuthController.getDisconnect);
 
-router.post('/users', UsersController.postNew);
-router.get('/users/me', UsersController.getMe);
+router.post('/api/users', UsersController.postNew);
+router.get('/api/users/me', UsersController.getMe);
 
-router.get('/buses', BusesController.getBuses);
-router.get('/buses/:id', BusesController.getBusId);
-router.get('/stations/:name', BusesController.getStation);
-router.get('/stations/:name/closest', BusesController.getStationClosest);
+router.get('/api/buses', BusesController.getBuses);
+router.get('/api/buses/:id', BusesController.getBusId);
+router.get('/api/stations/:name', BusesController.getStation);
+router.get('/api/stations/:name/closest', BusesController.getStationClosest);
 
 module.exports = router;
