@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBus</title>
-    <!-- Include your CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="root"></div>
+    <header class="header">
+            <div class="eb">
+                <h1>ƎB</h1>
+            </div>
+            <div class="encadr">
+                <h2>EasyBus</h2>
+            </div>
+    </header>
 
-    <!-- Include React and ReactDOM libraries -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-
-    <!-- Include your EasyBusFrontend component -->
-    <script type="module" src="EasyBusFrontend.js"></script>
-
-    <!-- Script to mount React application to the root element -->
-    <script>
-        // Mount the EasyBusFrontend component to the root element
-        ReactDOM.render(
-            React.createElement(EasyBusFrontend),
-            document.getElementById('root')
-        );
-    </script>
+        
+        <div class="container">
+            <form id="signup-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <button class="button">Envoyer</button>
+            </form>
+            <p>Already have an account? <a href="PrincipalPage.html">Login</a></p>
+        </div>
+        
+        <!-- <div class="form-group">
+            <label for="email" class="label">Email :</label>
+            <input type="email" id="email" class="input">
+        </div> -->
+        
+        
+    <script src="../JS/SignUp.js"></script>
+    
+    <footer class="footer">
+        <p>&copy; 2024 webApp</p>
+    </footer>
 </body>
 </html>

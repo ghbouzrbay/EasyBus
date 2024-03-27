@@ -9,7 +9,10 @@ body, html {
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+     background:url(./schienenersatzverkehr-sev-companeer-allianz-arena.jpg );
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -17,17 +20,51 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-
-h1 {
-    color: #333;
+.encadr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    
+    padding: 0px;
+    border-radius: 0 0 10px 10px;
 }
+.eb h1 {
+    color: #9cd8ff;
+    font-size: 40px;
+    margin-right: 5px;
+    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.774);
+    background-color: rgba(0, 0, 0, 0.644);
+}
+.encadr h2 {
+    color:white;
+    font-family: Stencil Std, fantasy;
+    padding: 8px;
+    font-size: 30px;
+    margin-left: 5px;
+    box-shadow: 10px 5px 5px #9cd8ff;
+    background-color: black;
+
+}
+ .eb {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-right: 5px;
+    
+    padding: 0px;
+    border-radius: 0 0 10px 10px;
+ }
+
 
 /* Header styles */
 .header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
+    /* background-color: #33333300; */
+    color: #9cd8ff;
     text-align: center;
+    padding: 20px;
+    font-size: 6em;
+
 }
 
 /* Navigation styles */
@@ -58,8 +95,22 @@ h1 {
 }
 
 /* Form styles */
-.form-group {
-    margin-bottom: 20px;
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
 }
 
 .label {
@@ -79,7 +130,7 @@ h1 {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 3px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
