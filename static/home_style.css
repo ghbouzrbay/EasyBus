@@ -14,7 +14,10 @@
 	flex-direction: column;
 	align-items: center;
 }
-
+ .bord {
+	border-style: none;
+	background-color: aliceblue;
+ }
 .header {
 	padding: 2rem;
 	display: flex;
@@ -22,14 +25,18 @@
 	align-items: center;
 	border-radius: 10px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background:url(./schienenersatzverkehr-sev-companeer-allianz-arena.jpg );
+    background:url(./pic/bus-public-transportation-budapest-hungary-600nw-2195962157.webp );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-color: #3333334b; */
     width: 115%;
     height: 100%;
 	margin-bottom: 3rem;
 	margin-top: 3%;
 }
 button {
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(0, 217, 255, 0.37);
     color: black;
     font-weight: bold;
     padding: 10px 20px;
@@ -40,7 +47,7 @@ button {
     margin: 4px 5px;
     transition: 0.5s;
     margin-top: 5rem;
-    
+
 }
 .btn-container {
 display: flex;
@@ -49,7 +56,7 @@ padding: 40px;
 }
 
 button:hover {
-background-color:rgba(0, 217, 255, 0.37)
+background-color:rgba(111, 0, 255, 0.342)
 }
 a{
 color: black;
@@ -74,20 +81,21 @@ text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 5px;
+    margin-right: 3px;
     
     padding: 0px;
     border-radius: 0 0 10px 10px;
-    margin-bottom: 3rem;
+    margin-bottom: 0.7rem;
+	margin-top: 0.7rem;
 }
 .encadr h2 {
     color:white;
     font-family: Stencil Std, fantasy;
-    padding: 8px;
+    padding: 1px;
     font-size: 30px;
     margin-left: 5px;
-    box-shadow: 10px 5px 5px #9cd8ff;
-    background-color: black;
+    /* box-shadow: 10px 5px 5px #9cd8ff; */
+    background-color: rgb(19, 52, 122);
 
 }
 .easybus-text {
@@ -106,7 +114,7 @@ text-decoration: none;
 
 .easybus-text p {
 	font-size: 0.9rem;
-	color: #2e2d2d;
+	color: rgb(7, 29, 77);
 	display: flex;
 	flex-wrap: wrap;
     text-transform: center;
@@ -121,7 +129,7 @@ text-decoration: none;
 
 .description p {
 	font-size: 1.7rem;
-	color: rgba(255, 255, 255, 0.747);
+	color: #a76d3eb4;
 	margin-bottom: 4rem;
 	display: flex;
 	flex-direction: column;
@@ -136,8 +144,9 @@ text-decoration: none;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 0rem;
+	margin-bottom: 1rem;
 	text-align: center;
+	margin-top: 2rem;
 }
 
 
@@ -156,7 +165,7 @@ text-decoration: none;
 
 .step-number {
 	display: inline-block;
-	background-color: #9cd8ff;
+	background-color: #ffc49c;
 	color: #fff;
 	font-size: 1.5rem;
 	padding: 0.3rem 2rem;
@@ -169,19 +178,27 @@ text-decoration: none;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(83, 200, 216, 0.158);
+	background-color: rgba(96, 148, 218, 0.692);
+	font-weight: bold;
 	
+}
+.front-family h1 {
+	font-family: Georgia, serif;
+	font-weight: 900;
+	font-size: 3rem; 
+	color: #a76d3eb4;
+	margin-top: 3rem;
 }
 
 .step-content h3 {
 	font-size: 1.2rem;
 	margin-bottom: 1rem;
-	color: #18175e;
+	color: balck;
 }
 
 .step-content p {
 	font-size: 1rem;
-	color: rgba(255, 255, 255, 0.774);
+	color: #333;
 	text-align: center;
 	margin-bottom: 2rem;
 }
@@ -214,6 +231,55 @@ text-decoration: none;
 .cookies button:hover {
 	background-color: #eb5539;
 }
+ .animation {
+	text-align: center;
+	object-position: 50% 50%;
+ }
+ 
+.animated-text {
+	margin-top: 5rem;
+    font-size: 5rem;
+    color: #6342bb4b;
+    animation: zoomIn 1s ease-in-out;
+	font-weight: bold;
+	
+	
+}
+
+.slides {
+    display: none;
+}
+.fade {
+    animation: fadeEffect 3s linear infinite; /* Répéter l'animation */
+}
+@keyframes fadeEffect {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes slidein {
+	from {
+	  margin-left: 100%;
+	  width: 300%;
+	}
+  
+	to {
+	  margin-left: 0%;
+	  width: 100%;
+	}
+  }
 
 @media only screen and (max-width: 768px){
 	.header {

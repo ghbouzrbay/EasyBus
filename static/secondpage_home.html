@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyBus - Search</title>
+    <link rel="stylesheet" href="./secand_home_page.css">
+    <link rel="stylesheet" href="./home_style.css">
+    <div class="easybus2">
+		<div class="encadr">
+            <a href="./home.html">
+			    <h2>EasyBus</h2>
+            </a>
+		</div>
+		<div class="easybus-text">
+			
+			<p>
+				<a href="./index.html">Sign Up</a><span>|</span> <a href="./index.html">Log In</a>
+			</p>
+		</div>
+	</div>
+</head>
+<body>
+    <div class=".degrade-horizontal">
+        <div class="container2">
+            <h1>Search for Stations or Route</h1>
+            <div class="tabs">
+                <button class="tab-btn active" id="stationsTab">Stations</button>
+                <button class="tab-btn" id="targetTab">Route</button>
+            </div>
+
+            <div id="stationsForm" class="search-form">
+                <input type="text" id="stationSearch" placeholder="Enter station name...">
+                <button class="btn" onclick="searchStations()">Search</button>
+            </div>
+
+            <div id="targetForm" class="search-form hidden">
+                <input type="text" id="departure" placeholder="From...">
+                <input type="text" id="destination" placeholder="To...">
+                <button class="btn" onclick="searchRoute()">Search</button>
+            </div>
+
+            <div id="results" class="results hidden">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

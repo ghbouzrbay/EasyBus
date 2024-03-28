@@ -1,0 +1,122 @@
+/* Reset default margin, padding, and box-sizing */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("./pic/portrait-beautiful-african-american-woman-260nw-2189852037.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container for the main content */
+.container2 {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Easybus section styles */
+.easybus2 {
+	display: flex;
+	align-items: right;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 4rem;
+    background-color: rgba(245, 245, 245, 0.459);
+}
+/* Header styles */
+h1 {
+    text-align: center;
+    color: rgba(96, 148, 218, 0.692);
+    margin-top: 0;
+}
+
+h1 img {
+    vertical-align: middle;
+    margin-right: 10px;
+    height: 40px;
+}
+
+/* Tabs styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    background-color: #ff7300;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.tab-btn.active {
+    background-color: #0056b3;
+}
+
+/* Search form styles */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.search-form input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-form .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.search-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Hidden class for hiding elements */
+.hidden {
+    display: none;
+}
+
+/* Results section styles */
+.results {
+    margin-top: 20px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
