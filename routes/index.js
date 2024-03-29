@@ -21,9 +21,4 @@ router.get('/api/buses/:id', BusesController.getBusId);
 router.get('/api/stations/:name', BusesController.getStation);
 router.get('/api/stations/:name/closest', BusesController.getStationClosest);
 
-//html files:
-router.get('/', (req, res) => {
-  res.sendFile('/home/adam/EasyBus/static/home.html');
-});
-
 module.exports = router;
