@@ -5,178 +5,79 @@
 	<title>EasyBus.ma</title>
 	<link rel="stylesheet" href="./homestyle2.css">
     <link rel="stylesheet" href="./home_style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<style>
-        .feedback {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 15px;
-			box-shadow: 10px 5px 5px #1e3b4e;
-        }
-        .feedback-name {
-            font-weight: bold;
-        }
-        .feedback-text {
-            margin-top: 5px;
-        }
-    </style>
-	<div class="easybus">
-		<div class="encadr">
-			<h2>EasyBus</h2>
-		</div>
-		<div class="easybus-text">
-			
-				<p>
-					<a href="./index.html">Sign up</a> <span>|</span><a href="#" id="loginBtn"> Log In </a>
-				</p>
-		</div>
-	</div>
-	<div id="loginModal" class="modal">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Connexion</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="#" method="post">
-						<div class="form-group">
-							<label for="username">Username:</label>
-							<input type="text" class="form-control" id="username" name="username">
-						</div>
-						<div class="form-group">
-							<label for="password">Password:</label>
-							<input type="password" class="form-control" id="password" name="password">
-						</div>
-						<button type="submit" class="btn btn-primary btn-block">Connexion</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="./login.js"></script>
-	
-    <div class="container">
-		<div class="annimation">
-			<h1 class="animated-text">EasyBus</h1>
-		</div>
-			<div class="header">
+</style>
+<div class="easybus">
+    <div class="encadr">
+        <h2>EasyBus</h2>
+    </div>
+    <div class="easybus-text">
+        
+        <p>
+            <a href="./home.html">Home</a><span>|</span><a href="./about.html">About</a> <span>|</span>
+            <a href="./index.html">Sign up</a> <span>|</span><a href="#" id="loginBtn"> Log In </a>
+        </p>
+    </div>
+</div>
+<div id="loginModal" class="modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Connexion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./login.js"></script>
+
+<div class="container">
+    <div class="annimation">
+        <h1 class="animated-text">EasyBus</h1>
+    </div>
+        <div class="header">
 
 
-				<div class="description">
-					
-					<p>
-						EasyBus is a Web application designed to provide users with real-time
-								information about nearby bus routes, timings, and stops.
-									With a user-friendly interface, users can 
-										easily plan their trips, find
-										the closest bus stops, and
-										track the arrival times of buses.
+            <div class="description">
+                
+                <p>
+                    EasyBus is a Web application designed to provide users with real-time
+                            information about nearby bus routes, timings, and stops.
+                                With a user-friendly interface, users can 
+                                    easily plan their trips, find
+                                    the closest bus stops, and
+                                    track the arrival times of buses.
 
-					</p>
-				</div>
-				
-				<div>
-					<button class="btn"><a href="./index.html">Sign Up</a></button>
-				</div>
-				
-			</div>
-	</div>
+                </p>
+            </div>
+            
+            <div>
+                <button class="btn"><a href="./index.html">Sign Up</a></button>
+            </div>
+            
+        </div>
+        
+</div>
+<footer class="footer">
+    <p>&copy; 2023 EasyBus.ma</p>
+    <img src="./pic/Capture d’écran 2024-03-25 022051.png">
+</footer>
 </head>
-<body>
-	
-	<div class="front-family">
-		<h1>Description</h1>
-	</div>
-	
-	<section class="main-section">
-		<div class="reklam">
-			<h2>Find the nearest bus stops </h2>
-			<img src="./pic/maxresdefault.jpg" width="350px" >
-			<p>Take advantage of our real-time map feature to easily identify the nearest bus stops in proximity to your current location. By using the map, you can efficiently plan your journey, ensuring convenient access to public transportation options. Whether you're commuting to work, heading to a social event, or exploring a new area, finding the closest bus stops has never been easier. Save time and simplify your travel experience with our user-friendly tool.</p>
-		</div>
-		
-		<div class="reklam">
-			<h2>Plan your trips</h2>
-			<img src="./pic/R.jpg" width="350px" >
-			<p>Efficiently plan your journeys by selecting your desired bus routes and stops. Our intuitive interface allows you to customize your travel itinerary with ease, ensuring smooth and hassle-free transportation. Whether you're commuting to work, running errands, or exploring the city, take control of your travel plans by choosing the routes and stops that best suit your needs. With our user-friendly trip planning feature, navigating public transportation has never been more convenient</p>
-		</div>
-		<div class="reklam">
-			<h2>Track the arrival times of buses</h2>
-			<img src="./pic/R (1).jpg" width="350px">
-			<p>Stay updated with the real-time arrival information of buses to ensure you never miss your ride again. Our advanced tracking system provides live updates on bus arrivals, allowing you to plan your journey with precision and confidence. Whether you're heading to work, meeting friends, or running errands, stay informed about the exact arrival times of buses at your designated stops. Say goodbye to waiting in uncertainty.</p>
-		</div>
-	</section>
-
-	<div class="slideshow-container">
-						<div class="slides fade">
-							<img src="./pic/bus-transdev-kiceo.jpg" style="width:100%">
-						</div>
-						<div class="slides fade">
-							<img src="./pic/acquissociaux-bus.jpg" style="width:100%">
-						</div>
-						<div class="slides fade">
-							<img src="./pic/360_F_520657874_MjtCU6kQT0e34eSgqmtd5ugduTRfLKqe.jpg" style="width:100%">
-						</div>
-						<div class="slides fade">
-							<img src="./pic/1000_F_566326734_auoT1pGWdFXgoJ265HRyV3PhdmF5F0FY.jpg" style="width:100%">
-						</div>
-						<div class="slides fade">
-							<img src="./pic/smiling-young-indian-woman-walking-with-suitcase-and-cellphone-by-bus-station.jpg" style="width:100%">
-						</div>
-						
-					 <script src="./flixe_image.js"></script>
-
-	<div class="container2">
-		
-		<a href="./secondpage_home.html" class="button">Discover Our Services ></a>
-	</div>
-	<div class="front-family">
-		<h1>Our users</h1>
-	</div>	
-	<div class="clm">
-		<div class="cadre_1">
-			<img src="./pic/portrait-bel-homme-boucle-tenant-telephone-isole-mur-blanc_231208-1096.avif" width="100%">
-			<div class="conversation_1">
-				<div class="message">
-				<strong>Ayoub:</strong> "EasyBus has been a game-changer for our city's transportation system. Its user-friendly design and comprehensive features have significantly improved the commuting experience for residents and visitors alike."
-				</div>
-				<img src="./pic/4211364.png" width="80px">
-			</div>
-		</div>
-		<div class="cadre_2">
-			<img src="./pic/image-jeune-femme-excitee-heureuse-qui-dit-oui-apres-avoir-utilise-application-pour-smartphone-fait-achats-ligne-telephone-portable-montre-signe-ok-debout-fond-bleu_1258-69911.avif" width="100%">
-			<div class="conversation_2">
-				<div class="message">
-				<strong>Salwa:</strong> "As a frequent traveler, I've used several bus tracking apps, but EasyBus stands out for its accuracy and reliability. The ability to plan my journey ahead of time and receive timely notifications has made my trips hassle-free."
-				</div>
-				<img src="./pic/4211364.png" width="80px">
-			</div>
-		</div>
-		<div class="cadre_3">
-			<img src="./pic/homme-affaires-afro-americain-aide-ordinateur-portable-posant-isole-mur-blanc_231208-641.avif" width="100%">
-			<div class="conversation_3">
-				<div class="message">
-				<strong>Adam:</strong> "EasyBus has truly revolutionized my commute! With its intuitive interface and real-time updates, I never have to worry about missing my bus again. Thank you for simplifying my daily travels!"
-				</div>
-				<img src="./pic/4211364.png" width="80px" height="80%">
-			</div>
-		</div>	
-	</div>
-		
-		
-		<footer class="footer">
-			<p>&copy; 2023 EasyBus.ma</p>
-			<img src="./pic/Capture d’écran 2024-03-25 022051.png">
-		</footer>
-	</div>
-	<script src="../src/index.js"></script>
-	
-</body>
-</html>
