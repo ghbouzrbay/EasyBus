@@ -7,8 +7,12 @@ const { ObjectId } = require('mongodb');
 class UsersController {
   static async postNew(request, response) {
     const dict = request.body;
+    const { username } = dict;
     const { email } = dict;
     const { password } = dict;
+    if (username === undefined) {
+      return response.status(400).send({ error: 'Missing username' });
+    }
     if (email === undefined) {
       return response.status(400).send({ error: 'Missing email' });
     }
@@ -23,8 +27,8 @@ class UsersController {
     sha1Hash.update(password);
     const hashedPass = sha1Hash.digest('hex');
 
-    const id = await dbClient.setUser({ email, password: hashedPass });
-    return response.status(201).send({ email, id });
+    const id = await dbClient.setUser({ username, email, password: hashedPass });
+    return response.status(201).send({ username, email, id });
   }
 
   static async getMe(request, response) {
@@ -35,7 +39,7 @@ class UsersController {
     }
     const useridobj = new ObjectId(userid);
     const user = await dbClient.getUser({ _id: useridobj });
-    return response.send({ email: user.email, id: userid });
+    return response.send({ username: user.username, email: user.email, id: userid });
   }
 }
 
