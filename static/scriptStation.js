@@ -6,6 +6,7 @@ function searchStations() {
         .then(response => response.json())
         .then(data => {
             displayResults(data);
+            loadScript("scriptStation.js");
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -31,4 +32,9 @@ function displayResults(data) {
 
     // Show the results div
     resultsDiv.classList.remove("hidden");
+}
+function loadScript(url) {
+    var script = document.createElement("script");
+    script.src = url;
+    document.body.appendChild(script);
 }
