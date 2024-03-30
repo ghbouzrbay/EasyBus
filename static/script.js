@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function searchiiStations() {
+function searchStations() {
     const stationSearchInput = document.getElementById("stationSearch");
     const stationName = stationSearchInput.value.trim();
 
     // Perform validation on station name, if needed
 
     // Assuming an asynchronous request to the backend to fetch station information
-    fetch(`/api/stations/${stationName}`)
+    fetch(`localhost:5000/api/stations/${stationName}`)
         .then(response => response.json())
         .then(data => {
             displayResults(data); // Function to display results
