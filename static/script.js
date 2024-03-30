@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function searchStations() {
+function searchiiStations() {
     const stationSearchInput = document.getElementById("stationSearch");
     const stationName = stationSearchInput.value.trim();
 
