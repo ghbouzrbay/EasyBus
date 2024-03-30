@@ -5,7 +5,25 @@
 	<title>EasyBus.ma</title>
 	<link rel="stylesheet" href="./homestyle2.css">
     <link rel="stylesheet" href="./home_style.css">
-</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .feedback {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+			box-shadow: 10px 5px 5px #1e3b4e;
+        }
+        .feedback-name {
+            font-weight: bold;
+        }
+        .feedback-text {
+            margin-top: 5px;
+        }
+        .btn.btn-primary.btn-block a {
+        color: white !important; /* Set text color to white */
+        text-decoration: none !important; /* Remove underline */
+        }
+    </style>
 <div class="easybus">
     <div class="encadr">
         <h2>EasyBus</h2>
@@ -37,7 +55,7 @@
                         <label for="password">Password:</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+                    <button class="btn btn-primary btn-block"><a href="./about.html">Connexion</a></button>
                 </form>
             </div>
         </div>
@@ -70,7 +88,12 @@
             </div>
             
             <div>
-                <button class="btn"><a href="./index.html">Sign Up</a></button>
+                <button id="btn-11">Sign Up</button>
+                <script>
+                    document.getElementById("btn-11").addEventListener("click", function() {
+                        window.location.href = "./index.html";
+                    });
+                </script>
             </div>
             
         </div>
