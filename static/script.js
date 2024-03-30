@@ -1,4 +1,5 @@
 // script.js
+import dbClient from '../utils/db';
 
 document.addEventListener("DOMContentLoaded", function () {
     const stationsTab = document.getElementById("stationsTab");
@@ -26,21 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function searchStations() {
+async function searchStations() {
     const stationSearchInput = document.getElementById("stationSearch");
     const stationName = stationSearchInput.value.trim();
 
-    // Perform validation on station name, if needed
-
-    // Assuming an asynchronous request to the backend to fetch station information
-    fetch(`localhost:5000/api/stations/${stationName}`)
-        .then(response => response.json())
-        .then(data => {
-            displayResults(data); // Function to display results
-        })
-        .catch(error => {
-            console.error('Error fetching station information:', error);
-        });
+    const buses = await dbClient.buses.find().toArray();
+    var busesPassing = [];
+    for (let i = 0; i < buses.length; i++) {
+      const busStation = buses[i].stations.find(station => station.name === stationName);
+      if (busStation !== undefined) {
+        busesPassing.push({ busId: buses[i].busId, timeRemaining: busStation.timeRemaining });
+      }
+    }
+    displayResults(busesPassing);
 }
 
 function searchRoute() {
