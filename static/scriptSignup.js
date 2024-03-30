@@ -1,7 +1,7 @@
 function sendRequest(username, email, password) {
     // Example API endpoint (replace with your actual API endpoint)
     // const apiUrl = 'https://example.com/api/login';
-    const apiUrl = 'localhost:5000/api/users';
+    const apiUrl = 'https://6803-41-142-74-155.ngrok-free.app/api/users';
 
     // Example data payload
     const data = {
@@ -44,4 +44,4 @@ function handleSubmit(event) {
 }
 
 // Attach event listener to form submission
-document.getElementById('loginForm').addEventListener('submit', handleSubmit);
+document.getElementById('signup-form').addEventListener('submit', handleSubmit);
