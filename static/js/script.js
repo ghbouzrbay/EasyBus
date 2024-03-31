@@ -121,7 +121,7 @@ function displayResults2(data) {
         const ul2 = document.createElement("ul");
         for (let i = 0; i < item.stations.length; i++) {
             const li2 = document.createElement("li");
-            li2.textContent += ` ${item.stations[i].name}, ${item.stations[i].timeRemaining}`;
+            li2.textContent += ` ${item.stations[i].name} - Time Remaining: ${item.stations[i].timeRemaining}`;
             ul2.appendChild(li2);
         }
         li.appendChild(ul2);
