@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100hv;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.39)), url(./pic/portrait-beautiful-african-american-woman-260nw-2189852037.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.39)), url(../pic/portrait-beautiful-african-american-woman-260nw-2189852037.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;

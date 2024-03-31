@@ -8,7 +8,7 @@
 .container {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.493)), url(./pic/bus-public-transportation-budapest-hungary-600nw-2195962157.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.493)), url(../pic/bus-public-transportation-budapest-hungary-600nw-2195962157.webp);
     background-size: cover;
     background-position: center;
     display: flex;
