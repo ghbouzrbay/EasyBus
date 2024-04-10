@@ -1,3 +1,4 @@
+// script.js
 const buses = [
     {
         "busId": "BUS001",
@@ -46,7 +47,6 @@ const buses = [
         ]
       }
 ];
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const stationsTab = document.getElementById("stationsTab");
@@ -106,7 +106,7 @@ function searchRoute() {
 }
 
 function displayResults2(data) {
-    const resultsContainer = document.getElementById("adamresults");
+    const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = ""; // Clear previous results
 
 // Assuming data is an array of results, you can format and display them here
@@ -121,29 +121,10 @@ function displayResults2(data) {
         const ul2 = document.createElement("ul");
         for (let i = 0; i < item.stations.length; i++) {
             const li2 = document.createElement("li");
-            li2.textContent += ` ${item.stations[i].name}, ${item.stations[i].timeRemaining}`;
+            li2.textContent += ` ${item.stations[i].name} - Time Remaining: ${item.stations[i].timeRemaining}`;
             ul2.appendChild(li2);
         }
         li.appendChild(ul2);
-        ul.appendChild(li);
-    });
-    resultsContainer.appendChild(ul);
-    }
-}
-
-function displayResults(data) {
-    const resultsContainer = document.getElementById("adamresults");
-    resultsContainer.innerHTML = ""; // Clear previous results
-
-// Assuming data is an array of results, you can format and display them here
-    if (data.length === 0) {
-        resultsContainer.innerHTML = "<p>No results found.</p>";
-    } else {
-// Example: Displaying results as a list
-    const ul = document.createElement("ul");
-    data.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.busId} - Time Remaining: ${item.timeRemaining}`;
         ul.appendChild(li);
     });
     resultsContainer.appendChild(ul);
@@ -165,4 +146,23 @@ function searchStations() {
     //const buses = await dbClient.buses.find().toArray();
 
     displayResults(busesPassing);
+}
+
+function displayResults(data) {
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = ""; // Clear previous results
+
+// Assuming data is an array of results, you can format and display them here
+    if (data.length === 0) {
+        resultsContainer.innerHTML = "<p>No results found.</p>";
+    } else {
+// Example: Displaying results as a list
+    const ul = document.createElement("ul");
+    data.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.busId} - Time Remaining: ${item.timeRemaining}`;
+        ul.appendChild(li);
+    });
+    resultsContainer.appendChild(ul);
+    }
 }

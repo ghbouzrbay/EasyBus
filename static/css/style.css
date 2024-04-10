@@ -9,7 +9,7 @@ body, html {
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
-     background:url(./pic/schienenersatzverkehr-sev-companeer-allianz-arena.jpg );
+     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(../pic/schienenersatzverkehr-sev-companeer-allianz-arena.jpg );
      background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -30,7 +30,7 @@ body {
     border-radius: 0 0 10px 10px;
 }
 .eb h1 {
-    color: #9cd8ff;
+    
     font-size: 40px;
     margin-right: 5px;
     box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.774);
@@ -55,7 +55,10 @@ body {
     padding: 0px;
     border-radius: 0 0 10px 10px;
  }
-
+ .eb a {
+    color: #fff;
+    text-decoration: none;
+ }
 
 /* Header styles */
 .header {

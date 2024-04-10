@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EasyBus.ma</title>
+	<link rel="stylesheet" href="./css/work_style.css">
+</head>
+<body>
+
+    <div class="navbar">
+            <img src="./pic/Capture d’écran 2024-03-30 164118.png">
+            <ul>
+                <li> <a href="./connexion.html">About</a></li>
+                <li> <a href="./profile.html">Profile</a></li>
+                <li> <a href="./home.html">Disconnect</a></li>
+            </ul>
+    </div>
+    <div class=".degrade-horizontal">
+        <div class="container2">
+            <h1>Search for Stations or Route</h1>
+            <div class="tabs">
+                <button class="tab-btn active" id="stationsTab">Stations</button>
+                <button class="tab-btn" id="targetTab">Route</button>
+            </div>
+
+            <div id="stationsForm" class="search-form">
+                <input type="text" id="stationSearch" placeholder="Enter station name...">
+                <button class="btn" onclick="searchStations()">Search</button>
+            </div>
+
+            <div id="targetForm" class="search-form hidden">
+                <input type="text" id="departure" placeholder="From...">
+                <input type="text" id="destination" placeholder="To...">
+                <button class="btn" onclick="searchRoute()">Search</button>
+            </div>
+
+            <div id="results">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </div>
+</body>
+</html>
