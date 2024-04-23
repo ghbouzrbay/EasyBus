@@ -131,7 +131,7 @@ function displayResults2(data) {
     }
 }
 
-function searchStations() {
+function searchStations_flasename() {
     var inputElement = document.getElementById("stationSearch");
     
     // Get the value from the input element
@@ -146,6 +146,29 @@ function searchStations() {
     //const buses = await dbClient.buses.find().toArray();
 
     displayResults(busesPassing);
+}
+
+function searchStations() {
+  // Replace 'YOUR_API_URL' with the actual URL of the API you want to fetch
+  const apiUrl = 'https://swapi-api.alx-tools.com/api/';
+
+  // Fetch data from the API
+  fetch(apiUrl)
+    .then(response => {
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      // Parse the JSON data
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      // Handle any errors that occur during the fetch process
+      console.error('There was a problem with the fetch operation:', error);
+    });
 }
 
 function displayResults(data) {
